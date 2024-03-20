@@ -1,5 +1,5 @@
-﻿// using TestConsole.Classes;
-// using TestConsole.Shape;
+﻿using TestConsole.Classes;
+using TestConsole.Shape;
 
 // TestClass y = new TestClass(){square = 5};
 
@@ -34,71 +34,87 @@
 
 // IEnumerable<int> e = new System.Collections.Concurrent.ConcurrentQueue<int>();
 
-Square s = new();
-s.Size = 4;
+// Square s = new();
+// s.Size = 4;
 
-Circle c = new();
-c.Radius = 4;
+// Circle c = new();
+// c.Radius = 4;
 
-IEnumerable<IGeometry> ig = new List<IGeometry>() { s, c };
+// IEnumerable<IGeometry> ig = new List<IGeometry>() { s, c };
 
-foreach (IGeometry x in ig)
-{
-    Console.WriteLine($"Area is {x.Area()}");
-}
+// foreach (IGeometry x in ig)
+// {
+//     Console.WriteLine($"Area is {x.Area()}");
+// }
 
-foreach (IPositionable3D x in ig)
-{
-    Console.WriteLine($"Drawing at 2d position {x.X}, {x.Y}");
-}
+// foreach (IPositionable3D x in ig)
+// {
+//     Console.WriteLine($"Drawing at 2d position {x.X}, {x.Y}");
+// }
 
-interface IPositionable3D : IPositionable2D
-{
-    int Z { get; }
-}
+// interface IPositionable3D : IPositionable2D
+// {
+//     int Z { get; }
+// }
 
-interface IPositionable2D
-{
-    int X { get; }
-    int Y { get; }
-}
-interface IGeometry
-{
-    double Area();
-    double Perimeter();
-}
+// interface IPositionable2D
+// {
+//     int X { get; }
+//     int Y { get; }
+// }
+// interface IGeometry
+// {
+//     double Area();
+//     double Perimeter();
+// }
 
-public class Square : IGeometry, IPositionable2D
-{
-    public int X { get; set; }
-    public int Y { get; set; }
-    public double Size { get; set; }
+// public class Square : IGeometry, IPositionable2D
+// {
+//     public int X { get; set; }
+//     public int Y { get; set; }
+//     public double Size { get; set; }
 
-    public double Area()
-    {
-        return Size * Size;
-    }
+//     public double Area()
+//     {
+//         return Size * Size;
+//     }
 
-    public double Perimeter()
-    {
-        return Size * 4;
-    }
-}
+//     public double Perimeter()
+//     {
+//         return Size * 4;
+//     }
+// }
 
-public class Circle : IGeometry, IPositionable3D
-{
-    public double Radius { get; set; }
-    public int X { get; set; }
-    public int Y { get; set; }
-    public int Z { get; set; }
+// public class Circle : IGeometry, IPositionable3D
+// {
+//     public double Radius { get; set; }
+//     public int X { get; set; }
+//     public int Y { get; set; }
+//     public int Z { get; set; }
 
-    public double Area()
-    {
-        return Math.PI * (Radius * Radius);
-    }
+//     public double Area()
+//     {
+//         return Math.PI * (Radius * Radius);
+//     }
 
-    public double Perimeter()
-    {
-        return 2 * Math.PI * Radius;
-    }
-}
+//     public double Perimeter()
+//     {
+//         return 2 * Math.PI * Radius;
+//     }
+// }
+
+// using System.Collections;
+
+// int x = 5;
+
+// ArrayList l = new ArrayList();
+
+// l.Add(x);
+
+TestGeneric<int> i = new(4);
+Console.WriteLine(i.X);
+Console.WriteLine(i.GetString());
+
+TestGeneric<string> s = new("Hello");
+Console.WriteLine(s.X);
+Console.WriteLine(s.GetString());
