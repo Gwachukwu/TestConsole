@@ -111,10 +111,30 @@ using TestConsole.Shape;
 
 // l.Add(x);
 
-TestGeneric<int> i = new(4);
-Console.WriteLine(i.X);
-Console.WriteLine(i.GetString());
+// TestGeneric<int> i = new(4);
+// Console.WriteLine(i.X);
+// Console.WriteLine(i.GetString());
 
-TestGeneric<string> s = new("Hello");
-Console.WriteLine(s.X);
-Console.WriteLine(s.GetString());
+// TestGeneric<string> s = new("Hello");
+// Console.WriteLine(s.X);
+// Console.WriteLine(s.GetString());
+
+// Singleton<int> i = new();
+
+// Singleton<int> y = new();
+
+// var x = i.GetInstance();
+// var z = y.GetInstance();
+
+var obj = new { Name = "Name", Age = 15 };
+Rec rec = new("name",12);
+Rec r = rec;
+
+Console.WriteLine(obj);
+Console.WriteLine(rec);
+Console.WriteLine(r);
+
+public record Rec(string Name,int Age)
+{
+    public string? Nickname {get;init;}
+}
